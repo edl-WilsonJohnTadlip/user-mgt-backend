@@ -81,13 +81,17 @@ class AuthController extends Controller
             }
         
         //get user object
-        $user = User::where('email', $request['email'])->firstOrFail();
+        $user = User::where('email', $request['email'])->with('roles')->firstOrFail();
+
+        //get role
+        // $roleName = $user->roles->pluck('name')->toArray();
 
         //if successful, generate token
         $token = $user->createToken('auth_token')->plainTextToken;
 
         return response()->json([
             'access_token' => $token,
+            // 'role' => $roleName,
             'token_type' => 'Bearer',
         ]);
     }
