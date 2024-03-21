@@ -51,7 +51,7 @@ class AuthController extends Controller
             'created_at' => new \DateTime(),
             'updated_at' => new \DateTime()
         ]);
-
+            // Return the created user
             return $user;
         
         }else{
@@ -91,6 +91,7 @@ class AuthController extends Controller
 
         return response()->json([
             'access_token' => $token,
+            'user_id' => $user->id,
             'role' => $roleName,
             'token_type' => 'Bearer',
         ]);

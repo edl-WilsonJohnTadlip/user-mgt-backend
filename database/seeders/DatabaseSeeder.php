@@ -23,19 +23,19 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         DB::table('roles')->insert([
-            'name' => 'Admin',
+            'name' => 'admin',
             'created_at' => new \DateTime(),
             'updated_at' => new \DateTime()
         ]);
 
         DB::table('roles')->insert([
-            'name' => 'Supervisor',
+            'name' => 'supervisor',
             'created_at' => new \DateTime(),
             'updated_at' => new \DateTime()
         ]);
 
         DB::table('roles')->insert([
-            'name' => 'User',
+            'name' => 'user',
             'created_at' => new \DateTime(),
             'updated_at' => new \DateTime()
         ]);
