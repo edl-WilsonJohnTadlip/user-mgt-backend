@@ -83,7 +83,7 @@ class AuthController extends Controller
         //get user object
         $user = User::where('email', $request['email'])->with('roles')->firstOrFail();
 
-        // get role name
+        // get role
         $roleName = $user->roles->pluck('name')->toArray();
 
         //if successful, generate token
