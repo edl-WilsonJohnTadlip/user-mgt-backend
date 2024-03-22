@@ -71,6 +71,9 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::group(['middleware' => 'role:user'], function () {
         Route::get('user', [TestController::class, 'user']);
+        Route::get('users/{id}/profile', [UserProfileController::class, 'show']);
+        Route::put('users/{id}/profile', [UserProfileController::class, 'update']);
+        Route::put('users/{id}/profile', [UserProfileController::class, 'destroy']);
     });
 });
 
