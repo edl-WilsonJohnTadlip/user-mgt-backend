@@ -39,5 +39,29 @@ class DatabaseSeeder extends Seeder
             'created_at' => new \DateTime(),
             'updated_at' => new \DateTime()
         ]);
+
+        DB::table('skills')->insert([
+            'name' => 'html and css',
+            'created_at' => new \DateTime(),
+            'updated_at' => new \DateTime()
+        ]);
+
+        DB::table('skills')->insert([
+            'name' => 'javascript',
+            'created_at' => new \DateTime(),
+            'updated_at' => new \DateTime()
+        ]);
+
+        DB::table('skills')->insert([
+            'name' => 'php',
+            'created_at' => new \DateTime(),
+            'updated_at' => new \DateTime()
+        ]);
+
+        DB::table('skills')->insert([
+            'name' => 'react',
+            'created_at' => new \DateTime(),
+            'updated_at' => new \DateTime()
+        ]);
     }
 }

@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\AdminProfileController;
+use App\Http\Controllers\SkillController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +44,8 @@ Route::middleware('auth:sanctum')->group(function () {
     
     // Skills routes
     Route::get('user/{id}/skills', [UserProfileController::class, 'skills']);
+    Route::apiResource('skills', SkillController::class);
+
 
     // Projects routes
     Route::get('user/{id}/projects', [UserProfileController::class, 'projects']);
