@@ -44,7 +44,9 @@ Route::middleware('auth:sanctum')->group(function () {
     
     // Skills routes
     Route::get('user/{id}/skills', [UserProfileController::class, 'skills']);
-    Route::apiResource('skills', SkillController::class);
+    Route::post('skills/store/{id}', [SkillController::class, 'store']);
+    Route::post('skills/destroy/{id}', [SkillController::class, 'destroy']);
+    
 
 
     // Projects routes

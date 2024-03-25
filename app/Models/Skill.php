@@ -8,14 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Skill extends Model
 {
     use HasFactory;
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name',
-    ];
+
+    protected $fillable = ['name'];
 
     /**
      * The users that belong to the skill.
@@ -23,7 +17,7 @@ class Skill extends Model
     public function users()
     {
         return $this
-        ->belongsToMany(User::class)
+        ->belongsToMany(User::class, 'skill_user', 'skill_id', 'user_id')
         ->withTimestamps();
     }
 }
